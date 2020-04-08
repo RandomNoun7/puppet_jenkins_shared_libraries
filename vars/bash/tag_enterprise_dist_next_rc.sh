@@ -38,6 +38,8 @@ git checkout $version-release
 bundle exec rake new_release:push_empty_commit PE_BRANCH_NAME=$version-release
 bundle exec rake new_release:create_and_push_rc_tag PE_BRANCH_NAME=$version-release
 
+: === Populating release repos on Artifactory
+bundle exec rake ship:prepare_release_repos
 
 : === Checking out mainline branch $branch_from
 git checkout $branch_from
